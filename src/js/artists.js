@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { openArtistModal } from './artist-details-modal.js';
+import { showLoader, hideLoader } from './artists-loader.js';
 
 const refs = {
   artistsList: document.querySelector('#artists-list'),
@@ -17,6 +18,7 @@ const STEP = 8;
 
 async function initArtists() {
   try {
+    showLoader();
     const response = await axios.get(BASE_URL);
     const data = response.data;
 
@@ -25,8 +27,10 @@ async function initArtists() {
       : data.results || data.data || data.artists || [];
 
     loadMore();
+    hideLoader();
   } catch (error) {
     console.error(`Error fetching artists: ${error.message}`);
+    hideLoader();
     showErrorMessage();
   }
 }
