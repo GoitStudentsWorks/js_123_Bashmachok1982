@@ -294,7 +294,7 @@ function renderTracks(tracks) {
               youtubeLinkHtml = `
                 <a href="${youtubeUrl}" target="_blank" rel="noopener noreferrer" class="track-youtube-link">
                   <svg width="20" height="20">
-                    <use href="./img/icons.svg#icon-youtube"></use>
+                    <use href="/img/icons.svg#icon-youtube"></use>
                   </svg>
                 </a>
               `;
