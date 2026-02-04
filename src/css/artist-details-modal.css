@@ -1,0 +1,460 @@
+/* DMYTRO SERHIIENKO  */
+.artist-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 16px;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.artist-modal-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.artist-modal {
+  position: relative;
+
+  border-radius: 16px;
+  padding: 52px 8px;
+
+  background: #060307;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.artist-modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  z-index: 10;
+}
+
+.artist-modal-close svg {
+  fill: #fff;
+  width: 32px;
+  height: 32px;
+}
+
+/* .artist-modal-close:hover svg {
+  fill: #764191;
+} */
+
+.artist-header {
+  text-align: center;
+  padding-top: 4px;
+  margin-bottom: 32px;
+}
+
+.artist-name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.artist-image {
+  width: 100%;
+  height: 167px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Інфо Арт */
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.artist-info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-info-label {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.artist-info-value {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.artist-biography {
+  margin-bottom: 30px;
+}
+
+.artist-section-title__bio,
+.artist-section-title__alb {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.artist-section-title__alb {
+  margin-bottom: 16px;
+}
+
+.artist-biography-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.artist-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.genre-tag__modal {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  height: 32px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.artist-albums {
+  margin-top: 16px;
+}
+
+.album-item {
+  border-radius: 16px;
+  padding: 14px 11px;
+  width: 272px;
+  min-width: 250px;
+  background: #1e1c1f;
+  margin-bottom: 32px;
+}
+
+.album-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.no-tracks {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+.tracks-table {
+  width: 100%;
+}
+
+.tracks-header {
+  display: grid;
+  grid-template-columns: 1fr 55px 50px;
+  gap: 16px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.track-header-name,
+.track-header-time,
+.track-header-action {
+  font-weight: 600;
+  font-size: 8px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.track-header-name {
+  text-align: left;
+}
+
+.track-header-time {
+  text-align: center;
+}
+
+.track-header-action {
+  text-align: center;
+}
+
+.tracks-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.track-item {
+  display: grid;
+  grid-template-columns: 1fr 55px 50px;
+  gap: 16px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  min-height: 40px;
+  background: transparent;
+  transition: background-color 0.2s ease;
+  align-items: center;
+}
+
+.track-item:nth-child(even) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.track-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-time {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+
+.track-youtube-link {
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.track-youtube-link svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: #fff;
+}
+
+.track-no-link {
+  display: block;
+}
+
+/* Error */
+.artist-error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+}
+
+.artist-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.artist-modal::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.artist-modal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.artist-modal::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/** TAB */
+@media (min-width: 768px) {
+  .artist-modal-backdrop {
+    padding: 64px 33px;
+  }
+
+  .artist-modal {
+    border-radius: 16px;
+    padding: 64px 24px;
+    width: 702px;
+    max-height: 90vh;
+    box-sizing: border-box;
+  }
+
+  .artist-header {
+    padding-top: 0;
+  }
+
+  .artist-name {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  .artist-image {
+    width: 100%;
+    height: 402px;
+  }
+
+  .artist-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .artist-section-title {
+    font-size: 14px;
+  }
+
+  .artist-section-title__bio {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  .artist-biography {
+    margin-bottom: 24px;
+  }
+
+  .artist-biography-text {
+    font-size: 14px;
+    max-height: 84px;
+    overflow-y: auto;
+  }
+
+  .artist-biography-text::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .artist-biography-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+
+  .artist-biography-text::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .artist-genres {
+    margin-bottom: 48px;
+  }
+
+  .genre-tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .artist-albums {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .album-item {
+    width: 100%;
+    min-width: auto;
+    margin-bottom: 0;
+  }
+
+  .album-title {
+    font-size: 16px;
+  }
+
+  .track-name,
+  .track-time {
+    font-size: 14px;
+  }
+
+  .tracks-header {
+    grid-template-columns: 1fr 70px 45px;
+    gap: 12px;
+  }
+
+  .track-item {
+    grid-template-columns: 1fr 70px 45px;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .track-youtube-link {
+    width: 28px;
+    height: 28px;
+  }
+
+  .track-youtube-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* DESC */
+@media (min-width: 1440px) {
+  .artist-modal-backdrop {
+    padding: 10px;
+  }
+
+  .artist-modal {
+    padding: 24px 16px 16px;
+  }
+
+  .artist-name {
+    font-size: 20px;
+  }
+}
+/* DMYTRO SERHIIENKO  */
