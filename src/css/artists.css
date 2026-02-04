@@ -1,0 +1,210 @@
+/* DMYTRO SERHIIENKO  */
+.artists-section {
+  padding: 64px 0;
+}
+
+.artists-header {
+  margin-bottom: 32px;
+}
+
+.artists-label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.artists-title {
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.artists-grid {
+  display: grid;
+  gap: 64px;
+  grid-template-columns: 1fr;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.artist-card__photo {
+  border-radius: 16px;
+  width: 100%;
+  height: 177px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.artist-card__genres {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  height: 32px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.artist-card__name {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.artist-card__bio {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  margin-bottom: 24px;
+}
+
+.artist-card__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  background: transparent;
+}
+
+.artist-card__link .icon-learn-more {
+  fill: #fff;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.btn-load-more {
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 288px;
+  height: 47px;
+
+  box-shadow:
+    0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #764191;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-load-more:hover {
+  opacity: 0.6;
+}
+
+.icon__down-arrow {
+  fill: #fff;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/** TAB */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .artists-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .artist-card__photo {
+    height: 432px;
+  }
+
+  .artists-grid {
+    gap: 32px;
+  }
+
+  .btn-load-more {
+    width: 340px;
+  }
+}
+
+/* DESC */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .artists-section {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+
+  .artists-header {
+    margin-bottom: 80px;
+  }
+
+  .artists-title {
+    font-size: 60px;
+    max-width: 523px;
+  }
+
+  .btn-load-more {
+    width: 170px;
+  }
+
+  .load-more-wrapper {
+    margin-top: 64px;
+  }
+}
+/* DMYTRO SERHIIENKO  */
