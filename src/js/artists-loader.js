@@ -1,5 +1,3 @@
-//  DMYTRO SERHIIENKO
-
 // export function showLoader() {
 //   const loader = document.createElement('div');
 //   loader.classList.add('artist-loader');
@@ -16,4 +14,3 @@
 //     loader.remove();
 //   }
 // }
-//  DMYTRO SERHIIENKO
