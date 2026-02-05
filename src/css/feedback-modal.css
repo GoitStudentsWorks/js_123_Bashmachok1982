@@ -1,194 +1,6 @@
-/* backdrop */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(15, 23, 42, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* модалка */
-.feedback-modal {
-  position: relative;
-  width: 100%;
-  max-width: 360px;
-  margin: 0 16px;
-  padding: 64px 16px 58px;
-  background-color: #000000;
-  border-radius: 16px;
-  color: #e5e7eb;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.feedback-title {
-  font-size: 24px;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-/* кнопка закриття */
-.feedback-close-btn {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  border: none;
-  color: #fff;
-  background: transparent;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-  transition: color 150ms ease-in-out;
-}
-
-/* форма */
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.feedback-label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.feedback-label-text {
-  font-size: 18px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
-.feedback-input,
-.feedback-textarea {
-  min-width: 288px;
-  min-height: 43px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid #ffffff33;
-  background-color: transparent;
-  font: 400 18px / 150% var(--font-family);
-  color: var(--opacity-white-60);
-  font-size: 18px;
-  outline: none;
-  transition:
-    border-color 150ms ease-in-out,
-    box-shadow 150ms ease-in-out;
-}
-
-.feedback-input::placeholder,
-.feedback-textarea::placeholder {
-  color: #4b5563;
-}
-
-.feedback-input:focus,
-.feedback-textarea:focus {
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4);
-}
-
-.feedback-error {
-  border-color: #dc2626 !important; /* червона рамка */
-}
-
-.feedback-error-text {
-  color: #dc2626;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-/* кнопка сабміту */
-.feedback-submit-btn {
-  min-width: 288px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: none;
-  box-shadow:
-    0 1px 2px 0 var(--opacity-neutral-darkest-5),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 var(--opacity-white-5);
-  background: var(--color-affair);
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition:
-    transform 150ms ease-in-out,
-    box-shadow 150ms ease-in-out,
-    opacity 150ms ease-in-out;
-}
-
-.feedback-submit-btn:hover,
-.feedback-submit-btn:focus-visible {
-  transform: translateY(-1px);
-  opacity: 0.6;
-}
-
-/* зірки */
-
-.rating {
-  display: flex;
-  gap: 8px;
-}
-
-.rating-star {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.rating-icon {
-  width: 32px;
-  height: 32px;
-  color: #ffffff; /* неактивний стан — білі */
-  transition:
-    color 0.2s ease,
-    transform 0.15s ease;
-}
-
-.rating-star.active .rating-icon {
-  color: #764191; /* активний стан — фіолетові */
-}
-
-.rating-star:hover .rating-icon {
-  transform: scale(1.1);
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.rating__star:hover .rating__icon {
-  transform: scale(1.1);
-}
-/* блокування скролу */
-.body-no-scroll {
-  overflow: hidden;
-}
-
-/* планшет */
-@media (min-width: 768px) {
-  .feedback-modal {
-    max-width: 420px;
-    padding: 28px 24px 24px;
-  }
-
-  .feedback-title {
-    font-size: 22px;
-  }
-}
+/* ===========================
+   ROOT
+=========================== */
 
 :root {
   --color-scheme-1-background: var(--color-neutral-darkest);
@@ -246,4 +58,254 @@
   --color-scheme-3-accent: var(--color-white);
   --color-scheme-3-foreground: var(--color-affair-darkest);
   --color-error-red: #af0404;
+}
+
+/* ===========================
+   BACKDROP
+=========================== */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.feedback-modal {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  padding: 64px 16px 58px;
+  background-color: #000000;
+  border-radius: 16px;
+  color: #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .feedback-modal {
+    max-width: 704px;
+    padding: 64px 32px 82px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .feedback-modal {
+    max-width: 864px;
+    padding: 64px;
+  }
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.feedback-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+  .feedback-title {
+    font-size: 44px;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .feedback-title {
+    font-size: 60px;
+  }
+}
+
+/* ===========================
+   CLOSE BUTTON
+=========================== */
+
+.feedback-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: none;
+  color: #fff;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  transition: color 150ms ease-in-out;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.feedback-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-label-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.feedback-input,
+.feedback-textarea {
+  min-width: 288px;
+  min-height: 43px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ffffff33;
+  background-color: transparent;
+  font: 400 18px / 150% var(--font-family);
+  color: var(--opacity-white-60);
+  font-size: 18px;
+  outline: none;
+  transition:
+    border-color 150ms ease-in-out,
+    box-shadow 150ms ease-in-out;
+}
+
+.feedback-input::placeholder,
+.feedback-textarea::placeholder {
+  color: #4b5563;
+}
+
+.feedback-input:focus,
+.feedback-textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4);
+}
+
+/* ===========================
+   ERRORS
+=========================== */
+
+.feedback-error {
+  border-color: #dc2626 !important;
+}
+
+.feedback-error-text {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ===========================
+   SUBMIT BUTTON
+=========================== */
+
+.feedback-submit-btn {
+  width: 288px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  box-shadow:
+    0 1px 2px 0 var(--opacity-neutral-darkest-5),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 var(--opacity-white-5);
+  background: var(--color-affair);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    transform 150ms ease-in-out,
+    box-shadow 150ms ease-in-out,
+    opacity 150ms ease-in-out;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feedback-submit-btn:hover,
+.feedback-submit-btn:focus-visible {
+  transform: translateY(-1px);
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .feedback-submit-btn {
+    width: 340px;
+  }
+}
+@media (min-width: 1440px) {
+  .feedback-submit-btn {
+    width: 108px;
+  }
+}
+
+/* ===========================
+   RATING
+=========================== */
+
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.rating-star {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rating-icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  transition:
+    color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.rating-star.active .rating-icon {
+  color: #764191;
+}
+
+.rating-star:hover .rating-icon {
+  transform: scale(1.1);
+}
+
+/* ===========================
+   MISC
+=========================== */
+
+.body-no-scroll {
+  overflow: hidden;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
