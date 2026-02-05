@@ -443,22 +443,7 @@
   }
 }
 
-/* DESC */
-/*
-@media (min-width: 1440px) {
-  .artist-modal-backdrop {
-    padding: 10px;
-  }
 
-  .artist-modal {
-    padding: 24px 16px 16px;
-  }
-
-  .artist-name {
-    font-size: 20px;
-  }
-}
-*/
 /* --- DESKTOP VERSION (1440px+) --- */
 @media (min-width: 1440px) {
   .artist-modal {
@@ -471,7 +456,7 @@
     position: relative;
   }
 
-  /* Верхня частина: Фото зліва, Інфо справа */
+
   .artist-header {
     display: flex;
     flex-direction: row;
@@ -482,7 +467,7 @@
     width: 100%;
   }
   .artist-main-content {
-    flex: 1; /* Займає весь вільний простір справа */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -492,7 +477,7 @@
     font-size: 28px;
     line-height: 1.2;
     text-align: center;
-    position: static; /* Назва артиста центрована зверху модалки */
+    position: static; 
     left: auto;
     transform: none;
     top: auto;
@@ -509,7 +494,7 @@
     flex-shrink: 0;
   }
 
-  /* Блок з текстом справа від фото */
+
   .artist-info-container {
     margin-top: 40px;
     flex: 1;
@@ -517,7 +502,7 @@
 
   .artist-info {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Роки/Стать та Учасники/Країна */
+    grid-template-columns: 1fr 3fr; 
     gap: 16px 32px;
     margin-bottom: 24px;
   }
@@ -532,7 +517,7 @@
     font-size: 18px;
   }
 
-  /* Біографія з прокруткою */
+
   .artist-biography {
     margin-bottom: 24px;
   }
@@ -540,14 +525,14 @@
   .artist-biography-text {
     font-size: 14px;
     line-height: 1.5;
-    height: 100px; /* Фіксована висота для появи скролу */
+    height: 100px; 
     overflow-y: auto;
     padding-right: 8px;
     margin-top: 8px;
     color: #fff;
   }
 
-  /* Стилізація скролу біографії */
+ 
   .artist-biography-text::-webkit-scrollbar {
     width: 4px;
   }
@@ -556,13 +541,12 @@
     border-radius: 4px;
   }
 
-  /* Жанри під біографією */
   .artist-genres {
     margin-bottom: 0;
     gap: 16px;
   }
 
-  /* Секція альбомів: 4 в ряд */
+
   .artist-albums {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
@@ -573,7 +557,7 @@
   .album-item {
     width: 100%;
     padding: 12px;
-    min-width: 0; /* Важливо для grid */
+    min-width: 0; 
   }
 
   .album-title {
@@ -584,7 +568,7 @@
     text-overflow: ellipsis;
   }
 
-  /* Таблиця треків (компактніша для 4 колонок) */
+
   .track-item {
     padding: 8px 6px;
     grid-template-columns: 1fr 35px 30px;
@@ -595,8 +579,7 @@
     font-size: 11px;
   }
 
-  /* YouTube Hover */
-  .track-youtube-link svg {
+   .track-youtube-link svg {
     fill: #fff;
     transition: fill 0.2s ease;
   }
