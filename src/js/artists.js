@@ -79,7 +79,7 @@ function renderArtists(artists) {
         <button type="button" class="artist-card__link js-learn-more">
           Learn More 
           <svg class="icon-learn-more" width="16" height="16">
-            <use href="./img/icons.svg#icon-caret-right"></use>
+            <use href="${import.meta.env.BASE_URL}img/icons.svg#icon-caret-right"></use>
           </svg>
         </button>
       </li>
