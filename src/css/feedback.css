@@ -1,5 +1,5 @@
 .feedback {
-  padding: 32px 16px;
+  padding: 64px 0;
   background: #060307;
   color: #fff;
   text-align: center;
@@ -18,10 +18,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* важно для слайдов */
+  width: 100%;
 }
 
 .stars-rating-feedback {
+  margin-bottom: 32px;
+}
+
+.text-feedback {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.text-name-feedback {
+  font-weight: 600;
+  font-size: 16px;
   margin-bottom: 16px;
 }
 
@@ -47,17 +60,23 @@
 }
 
 .swiper-pagination-bullet-active {
-  background: #764191; /* акцент для активного */
+  background: #764191;
 }
 
-/* отзыв */
-.text-feedback {
-  font-weight: 700;
-  font-size: 24px;
-  margin: 16px 0;
+@media screen and (min-width: 768px) {
+  .feedback {
+    padding: 64px 0;
+  }
+  .text-feedback {
+    font-size: 26px;
+  }
 }
 
-.text-name-feedback {
-  font-weight: 600;
-  font-size: 16px;
+@media screen and (min-width: 1440px) {
+  .feedback {
+    padding: 112px 0;
+  }
+  .text-feedback {
+    font-size: 32px;
+  }
 }
