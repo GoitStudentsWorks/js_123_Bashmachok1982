@@ -1,67 +1,42 @@
-.feedback {
-  padding: 64px 0;
-  background: #060307;
+.feedback-section {
+  background-color: #000; 
   color: #fff;
-  text-align: center;
+  padding: 60px 0;
 }
-
-.feedback .swiper {
-  position: relative;
-  width: 100%;
+/* Прихований заголовок для секції */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
-
-.feedback .swiper-wrapper {
-  display: flex;
-}
-
-.item-feedback {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.stars-rating-feedback {
-  margin-bottom: 32px;
-}
-
-.text-feedback {
-  font-weight: 700;
-  font-size: 24px;
-  margin-bottom: 32px;
-  line-height: 1.4;
-}
-
-.text-name-feedback {
-  font-weight: 600;
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: #fff;
-}
-
-.feedback-pagination {
+.stars-container {
   display: flex;
   justify-content: center;
-  margin-top: 16px;
-  gap: 8px;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.pagination-start,
-.pagination-middle,
-.pagination-end {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.swiper-pagination-bullet-active {
-  background: #764191;
-}
+
 .feedback-btn {
   border-radius: 12px;
   padding: 10px 24px;
@@ -81,6 +56,43 @@
   margin-top: 16px;
   padding: 10px 78px;
   text-align: center;
+}
+.star {
+  font-size: 24px;
+  color: #ffffff; /* Порожня зірка (біла) */
+}
+
+.star.filled {
+  color: #7e57c2; /* Заповнена зірка (фіолетова) */
+}
+
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  bottom: 20px !important;
+}
+
+/* Базовий стиль точки */
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2); /* Неактивний колір */
+  opacity: 1;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Акцентний стиль для активної точки */
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important; /* Білий або твій фіолетовий */
+  transform: scale(1.2);
+}
+
+/* Ховер для зручності */
+.swiper-pagination-bullet:hover {
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (min-width: 768px) {
@@ -128,3 +140,7 @@
     opacity: 0.6;
   }
 }
+
+
+
+
