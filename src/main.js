@@ -3,6 +3,7 @@ window.$ = $;
 window.jQuery = $;
 
 import './js/mobile-menu.js';
+import './js/hero.js';
 import './js/artists.js';
 import './js/artist-details-modal.js';
 import './js/feedback.js';
