@@ -40,11 +40,6 @@
   text-decoration: none;
 }
 
-.footer-nav-link:hover,
-.footer-nav-link:focus-visible {
-  text-decoration: underline;
-}
-
 .footer-bottom {
   position: relative;
   padding-top: 24px;
