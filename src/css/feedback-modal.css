@@ -118,7 +118,7 @@
 }
 
 .rating-star.active .rating-icon {
-  color: #764191;
+  fill: #764191;
 }
 
 .feedback-submit-btn {
@@ -155,7 +155,7 @@
 @media (min-width: 768px) {
   .feedback-modal {
     max-width: 704px;
-    padding: 64px 32px;
+    padding: 64px 32px 82px;
   }
   .feedback-title {
     font-size: 44px;
@@ -173,7 +173,7 @@
 @media (min-width: 1440px) {
   .feedback-modal {
     max-width: 864px;
-    padding: 80px 48px;
+    padding: 64px 64px;
   }
   .feedback-title {
     font-size: 60px;
