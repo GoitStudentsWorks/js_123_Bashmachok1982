@@ -10,4 +10,3 @@ import './js/feedback.js';
 import './js/feedback-modal.js';
 import './js/feedback-swiper.js';
 import './js/feedback-raty.js';
-import './js/hero.js';
