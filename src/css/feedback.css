@@ -182,7 +182,7 @@
   /* кнопкa-контейнер */
   .custom-arrow {
     visibility: visible;
-    position: static;
+    
     display: flex;
     align-items: center;
     justify-content: center;
