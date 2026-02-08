@@ -278,6 +278,8 @@ h4 {
     padding-right: 24px;
     margin-right: 33px;
     margin-left: 33px;
+
+    max-width: 702px;
   }
 
   .modal__artist::after {
@@ -337,6 +339,7 @@ h4 {
   .modal__content {
     padding-left: 64px;
     padding-right: 64px;
+    max-width: 1312px;
   }
 
   .modal__artist-thumb {
