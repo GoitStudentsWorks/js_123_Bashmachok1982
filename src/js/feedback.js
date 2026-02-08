@@ -50,17 +50,12 @@ function initSwiper() {
   new Swiper('.feedback-slider', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
-    spaceBetween: 20,
-
+    spaceBetween: 0,
     grabCursor: false, // для свайпу
-
-
-
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
