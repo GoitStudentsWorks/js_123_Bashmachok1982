@@ -1,8 +1,7 @@
 // ================================================
 // 1. HELPERS
 // ================================================
-import iziToast from 'iziToast';
-import 'izitoast/dist/css/iziToast.min.css';
+
 function lockScroll() {
   document.body.classList.add('body-no-scroll');
 }
@@ -181,13 +180,7 @@ function initForm() {
         .forEach(s => s.classList.remove('active'));
 
       closeModal();
-      //alert('Дякуємо за відгук!');
-      iziToast.show({
-        title: 'Вітаю',
-        message: 'Дякуємо за відгук!',
-        position:'topCenter',
-        color: '#764191'                
-      })
+      alert('Дякуємо за відгук!');
     } catch {
       const err = document.createElement('div');
       err.className = 'server-error-message';

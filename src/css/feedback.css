@@ -61,8 +61,8 @@
 }
 
 .swiper-pagination-bullet-active {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
 
   background-color: #fff !important;
   transform: scale(1.2);
@@ -189,7 +189,8 @@
 
   /* кнопкa-контейнер */
   .custom-arrow {
-    visibility: visible;    
+    visibility: visible;
+    
     display: flex;
     align-items: center;
     justify-content: center;
