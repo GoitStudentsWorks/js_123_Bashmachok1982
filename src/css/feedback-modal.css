@@ -113,12 +113,13 @@
 .rating-icon {
   width: 32px;
   height: 32px;
-  fill: #fff;
-  transition: color 0.2s;
+  color: #fff;
+  fill: currentColor;
+  transition: color 0.2s ease;
 }
 
 .rating-star.active .rating-icon {
-  fill: #764191;
+  color: #764191;
 }
 
 .feedback-submit-btn {
