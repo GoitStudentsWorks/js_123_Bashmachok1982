@@ -1,131 +1,6 @@
-function initRating() {
-  const rating = document.querySelector('.rating');
-  if (!rating) return;
-
-  const stars = rating.querySelectorAll('.rating-star');
-  const input = document.querySelector('#rating-input');
-
-  if (!stars.length || !input) return;
-
-  if (rating.dataset.initialized === 'true') return;
-  rating.dataset.initialized = 'true';
-
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = Number(star.dataset.value);
-
-      input.value = value;
-
-      stars.forEach(s => {
-        const v = Number(s.dataset.value);
-        s.classList.toggle('active', v <= value);
-      });
-    });
-  });
-}
-
-function showError(input, message) {
-  input.classList.add('feedback-error');
-
-  let errorEl = input.parentElement.querySelector('.feedback-error-text');
-  if (!errorEl) {
-    errorEl = document.createElement('div');
-    errorEl.className = 'feedback-error-text';
-    input.parentElement.appendChild(errorEl);
-  }
-
-  errorEl.textContent = message;
-}
-
-function clearError(input) {
-  input.classList.remove('feedback-error');
-
-  const errorEl = input.parentElement.querySelector('.feedback-error-text');
-  if (errorEl) errorEl.remove();
-}
-// -------------------------------------------------------------------------------------
-
-function initFeedbackForm() {
-  const form = document.querySelector('.js-feedback-form');
-  if (!form) return;
-
-  const nameInput = form.querySelector('input[name="name"]');
-  const messageInput = form.querySelector('textarea[name="message"]');
-  const ratingInput = form.querySelector('#rating-input');
-  const ratingBlock = form.querySelector('.rating');
-
-  const submitText = form.querySelector('.js-submit-text');
-  const submitLoader = form.querySelector('.js-submit-loader');
-
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-
-    const name = nameInput.value.trim();
-    const descr = messageInput.value.trim();
-    const rating = Number(ratingInput.value);
-
-    clearError(nameInput);
-    clearError(messageInput);
-    clearError(ratingBlock);
-
-    let hasError = false;
-
-    if (name.length < 2 || name.length > 16) {
-      showError(nameInput, 'Name must be 2–16 characters');
-      hasError = true;
-    }
-
-    if (descr.length < 10 || descr.length > 512) {
-      showError(messageInput, 'Message must be 10–512 characters');
-      hasError = true;
-    }
-
-    if (rating < 1 || rating > 5) {
-      showError(ratingBlock, 'Please select a rating');
-      hasError = true;
-    }
-
-    if (hasError) return;
-
-    const payload = { name, rating, descr };
-
-    submitText.hidden = true;
-    submitLoader.hidden = false;
-
-    try {
-      const response = await fetch(
-        'https://sound-wave.b.goit.study/api/feedbacks',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            accept: 'application/json',
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      if (!response.ok) return;
-
-      const data = await response.json();
-
-      form.reset();
-      ratingInput.value = 0;
-      document
-        .querySelectorAll('.rating-star')
-        .forEach(star => star.classList.remove('active'));
-
-      if (window.feedbackModal?.close) {
-        window.feedbackModal.close();
-      }
-    } catch (error) {
-      console.log('❌ Network error:', error);
-    } finally {
-      submitText.hidden = false;
-      submitLoader.hidden = true;
-    }
-  });
-}
+// ================================================
+// 1. HELPERS
+// ================================================
 
 function lockScroll() {
   document.body.classList.add('body-no-scroll');
@@ -135,45 +10,201 @@ function unlockScroll() {
   document.body.classList.remove('body-no-scroll');
 }
 
-function initFeedbackModal() {
-  const backdrop = document.querySelector('.js-feedback-backdrop');
-  const modal = document.querySelector('.feedback-modal');
+function showError(target, message) {
+  target.classList.add('feedback-error');
+
+  let error = target.parentElement.querySelector('.feedback-error-text');
+  if (!error) {
+    error = document.createElement('div');
+    error.className = 'feedback-error-text';
+    target.parentElement.appendChild(error);
+  }
+
+  error.textContent = message;
+}
+
+function clearError(target) {
+  target.classList.remove('feedback-error');
+  const error = target.parentElement.querySelector('.feedback-error-text');
+  if (error) error.remove();
+}
+
+function clearAllErrors() {
+  document.querySelectorAll('.feedback-error').forEach(el => {
+    clearError(el);
+  });
+
+  const serverError = document.querySelector('.server-error-message');
+  if (serverError) serverError.remove();
+}
+
+// ================================================
+// 2. MODAL
+// ================================================
+
+const backdrop = document.querySelector('.js-feedback-backdrop');
+
+function openModal() {
+  backdrop.removeAttribute('hidden');
+  lockScroll();
+  clearAllErrors();
+}
+
+function closeModal() {
+  backdrop.setAttribute('hidden', '');
+  unlockScroll();
+}
+
+function initModal() {
   const closeBtn = document.querySelector('.js-feedback-close');
-
-  if (!backdrop || !modal || !closeBtn) return;
-
-  function openModal() {
-    backdrop.hidden = false;
-    lockScroll();
-  }
-
-  function closeModal() {
-    backdrop.hidden = true;
-    unlockScroll();
-  }
+  if (!backdrop || !closeBtn) return;
 
   closeBtn.addEventListener('click', closeModal);
 
-  backdrop.addEventListener('click', event => {
-    if (event.target === backdrop) {
+  backdrop.addEventListener('click', e => {
+    if (e.target === backdrop) closeModal();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !backdrop.hasAttribute('hidden')) {
       closeModal();
     }
   });
-
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  });
-
-  window.feedbackModal = {
-    open: openModal,
-    close: closeModal,
-  };
 }
 
+// ================================================
+// 3. OPEN BY "Leave feedback" BUTTON
+// ================================================
+
+function initOpenButton() {
+  const openBtn = document.querySelector('.feedback-btn');
+  if (!openBtn) return;
+
+  openBtn.addEventListener('click', e => {
+    e.preventDefault(); // ❗ важно
+    openModal();
+  });
+}
+
+// ================================================
+// 4. RATING (A → stars)
+// ================================================
+
+function initRating() {
+  const rating = document.querySelector('.rating');
+  if (!rating) return;
+
+  const stars = rating.querySelectorAll('.rating-star');
+  const input = document.getElementById('rating-input');
+
+  stars.forEach(star => {
+    star.addEventListener('click', e => {
+      e.preventDefault(); // ❗ НЕ прыгаем вверх
+
+      const value = Number(star.dataset.value);
+      input.value = value;
+
+      stars.forEach(s => {
+        s.classList.toggle('active', Number(s.dataset.value) <= value);
+      });
+
+      clearError(rating);
+    });
+  });
+}
+
+// ================================================
+// 5. FORM
+// ================================================
+
+function initForm() {
+  const form = document.querySelector('.js-feedback-form');
+  if (!form) return;
+
+  const nameInput = form.querySelector('[name="name"]');
+  const messageInput = form.querySelector('[name="message"]');
+  const ratingInput = document.getElementById('rating-input');
+  const ratingBlock = form.querySelector('.rating');
+
+  const submitBtn = form.querySelector('.feedback-submit-btn');
+  const submitText = form.querySelector('.js-submit-text');
+  const submitLoader = form.querySelector('.js-submit-loader');
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    clearAllErrors();
+
+    const name = nameInput.value.trim();
+    const descr = messageInput.value.trim();
+    const rating = Number(ratingInput.value);
+
+    let valid = true;
+
+    if (!name) {
+      showError(nameInput, 'Імʼя обовʼязкове');
+      valid = false;
+    }
+
+    if (!descr || descr.length < 10) {
+      showError(messageInput, 'Мінімум 10 символів');
+      valid = false;
+    }
+
+    if (rating < 1 || rating > 5) {
+      showError(ratingBlock, 'Оберіть рейтинг');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    submitBtn.disabled = true;
+    submitText.hidden = true;
+    submitLoader.hidden = false;
+
+    try {
+      const res = await fetch('https://sound-wave.b.goit.study/api/feedbacks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({ name, rating, descr }),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+
+      form.reset();
+      ratingInput.value = '0';
+      document
+        .querySelectorAll('.rating-star')
+        .forEach(s => s.classList.remove('active'));
+
+      closeModal();
+      alert('Дякуємо за відгук!');
+    } catch {
+      const err = document.createElement('div');
+      err.className = 'server-error-message';
+      err.textContent = 'Помилка відправки';
+      err.style.color = '#dc2626';
+      err.style.textAlign = 'center';
+      err.style.marginTop = '16px';
+      form.appendChild(err);
+      setTimeout(() => err.remove(), 5000);
+    } finally {
+      submitBtn.disabled = false;
+      submitText.hidden = false;
+      submitLoader.hidden = true;
+    }
+  });
+}
+
+// ================================================
+// 6. INIT
+// ================================================
+
 document.addEventListener('DOMContentLoaded', () => {
-  initFeedbackModal();
+  initModal();
+  initOpenButton(); // ← ВАЖНО
   initRating();
-  initFeedbackForm();
+  initForm();
 });

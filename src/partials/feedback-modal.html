@@ -1,4 +1,4 @@
-<div class="backdrop js-feedback-backdrop" data-feedback-backdrop hidden>
+<div class="backdrop js-feedback-backdrop" hidden>
   <div
     class="feedback-modal"
     role="dialog"
@@ -38,38 +38,75 @@
         ></textarea>
       </label>
 
-      <div class="rating" data-rating="0">
-        <button class="rating-star" data-value="1" type="button">
+      <div class="rating">
+        <a
+          class="rating-star"
+          data-value="1"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 1 star"
+        >
           <svg class="rating-icon">
-            <use href="#icon-star"></use>
+            <use href="./img/icons.svg#icon-star"></use>
           </svg>
-        </button>
-        <button class="rating-star" data-value="2" type="button">
+        </a>
+
+        <a
+          class="rating-star"
+          data-value="2"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 2 star"
+        >
           <svg class="rating-icon">
-            <use href="#icon-star"></use>
+            <use href="./img/icons.svg#icon-star"></use>
           </svg>
-        </button>
-        <button class="rating-star" data-value="3" type="button">
+        </a>
+        <a
+          class="rating-star"
+          data-value="3"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 3 star"
+        >
           <svg class="rating-icon">
-            <use href="#icon-star"></use>
+            <use href="./img/icons.svg#icon-star"></use>
           </svg>
-        </button>
-        <button class="rating-star" data-value="4" type="button">
+        </a>
+        <a
+          class="rating-star"
+          data-value="4"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 4 star"
+        >
           <svg class="rating-icon">
-            <use href="#icon-star"></use>
+            <use href="./img/icons.svg#icon-star"></use>
           </svg>
-        </button>
-        <button class="rating-star" data-value="5" type="button">
+        </a>
+        <a
+          class="rating-star"
+          data-value="5"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 5 star"
+        >
           <svg class="rating-icon">
-            <use href="#icon-star"></use>
+            <use href="./img/icons.svg#icon-star"></use>
           </svg>
-        </button>
+        </a>
       </div>
 
       <button class="feedback-submit-btn js-feedback-submit" type="submit">
         <span class="js-submit-text">Submit</span>
         <span class="loader js-submit-loader" hidden></span>
       </button>
+
       <input type="hidden" name="rating" id="rating-input" value="0" />
     </form>
   </div>

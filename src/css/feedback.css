@@ -1,5 +1,7 @@
 .feedback-section {
+
   background-color: #000;
+
   color: #fff;
   padding: 60px 0;
 }
@@ -24,6 +26,7 @@
 }
 .star {
   font-size: 24px;
+
   color: #ffffff;
 }
 
@@ -43,6 +46,7 @@
   align-items: center;
 }
 
+
 .swiper-pagination {
   display: flex;
   justify-content: center;
@@ -50,10 +54,12 @@
   bottom: 20px !important;
 }
 
+
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: var(--color-scheme-1-text) !important ;
+
   opacity: 1;
   transition: background-color 0.3s, transform 0.3s;
   border-radius: 50%;
@@ -63,9 +69,15 @@
 .swiper-pagination-bullet-active {
   width: 16px;
   height: 16px;
+
   background-color: #fff !important;
   transform: scale(1.2);
 }
+
+
+
+
+
 
 .custom-arrow {
   border: 1px solid var(--opacity-white-50);
@@ -75,12 +87,19 @@
   height: 48px;
   background: var(--color-scheme-1-foreground);
 }
+
 .custom-arrow {
   visibility: hidden;
 }
 .user-name{
   margin-top: 20px;
 }
+
+
+
+
+
+
 /* ----------- button -------------- */
 .feedback-btn {
   border-radius: 12px;
@@ -103,6 +122,10 @@
 
 @media screen and (min-width: 768px) {
   .feedback-container {
+
+
+   
+
     text-align: center;
   }
   .text-feedback {
@@ -146,6 +169,7 @@
     background: #764191;
     opacity: 0.6;
   }
+
   .swiper {
     height: 250px;
     text-align: center;
@@ -192,4 +216,15 @@
     stroke: var(--color-scheme-1-foreground);
     opacity: 1;
   }
+
 }
+
+.custom-arrow:hover .feedback-icon {
+  fill: var(--color-scheme-1-foreground); 
+  stroke: var(--color-scheme-1-foreground);
+}
+}
+
+
+
+

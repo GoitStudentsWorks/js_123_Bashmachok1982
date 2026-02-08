@@ -1,69 +1,3 @@
-/* ===========================
-   ROOT
-=========================== */
-
-:root {
-  --color-scheme-1-background: var(--color-neutral-darkest);
-  --color-neutral-darkest: #060307;
-  --color-scheme-1-border: var(--opacity-white-20);
-  --color-scheme-1-text: var(--color-white);
-  --color-neutral-lighter: #d9d9d9;
-  --color-white: #fff;
-  --color-neutral-lightest: #f2f2f2;
-  --color-neutral-light: #b4b3b4;
-  --color-neutral: #828183;
-  --color-neutral-dark: #504e51;
-  --color-neutral-darker: #1e1c1f;
-  --opacity-transparent: rgba(255, 255, 255, 0);
-  --color-scheme-1-foreground: var(--color-neutral-darkest);
-  --color-scheme-1-accent: var(--color-white);
-  --opacity-white-5: rgba(255, 255, 255, 0.05);
-  --opacity-white-10: rgba(255, 255, 255, 0.1);
-  --opacity-white-15: rgba(255, 255, 255, 0.15);
-  --opacity-white-20: rgba(255, 255, 255, 0.2);
-  --opacity-white-30: rgba(255, 255, 255, 0.3);
-  --opacity-white-40: rgba(255, 255, 255, 0.4);
-  --opacity-white-50: rgba(255, 255, 255, 0.5);
-  --opacity-white-60: rgba(255, 255, 255, 0.6);
-  --opacity-neutral-darkest-5: rgba(6, 3, 7, 0.05);
-  --opacity-neutral-darkest-10: rgba(6, 3, 7, 0.1);
-  --opacity-neutral-darkest-15: rgba(6, 3, 7, 0.15);
-  --opacity-neutral-darkest-20: rgba(6, 3, 7, 0.2);
-  --opacity-neutral-darkest-30: rgba(6, 3, 7, 0.3);
-  --opacity-neutral-darkest-40: rgba(6, 3, 7, 0.4);
-  --opacity-neutral-darkest-50: rgba(6, 3, 7, 0.5);
-  --opacity-neutral-darkest-60: rgba(6, 3, 7, 0.6);
-  --color-affair-lightest: #f1ecf4;
-  --color-affair-lighter: #e3d9e9;
-  --color-affair-light: #9f7ab2;
-  --color-affair: #764191;
-  --color-affair-dark: #5e3474;
-  --color-affair-darker: #2f1a3a;
-  --color-affair-darkest: #23132b;
-  --color-chateau-green-lightest: #ecf4ed;
-  --color-chateau-green-lighter: #d9eadc;
-  --color-chateau-green-light: #7ab686;
-  --color-chateau-green: #419853;
-  --color-chateau-green-dark: #347942;
-  --color-chateau-green-darker: #1a3c21;
-  --color-chateau-green-darkest: #132d18;
-  --color-scheme-2-text: var(--color-white);
-  --color-scheme-2-background: var(--color-neutral-darker);
-  --color-scheme-2-border: var(--opacity-white-20);
-  --color-scheme-2-accent: var(--color-white);
-  --color-scheme-2-foreground: var(--color-neutral-darker);
-  --color-scheme-3-text: var(--color-white);
-  --color-scheme-3-background: var(--color-affair-darkest);
-  --color-scheme-3-border: var(--opacity-white-20);
-  --color-scheme-3-accent: var(--color-white);
-  --color-scheme-3-foreground: var(--color-affair-darkest);
-  --color-error-red: #af0404;
-}
-
-/* ===========================
-   BACKDROP
-=========================== */
-
 .backdrop {
   position: fixed;
   inset: 0;
@@ -74,14 +8,14 @@
   z-index: 1000;
 }
 
-/* ===========================
-   MODAL
-=========================== */
+.backdrop[hidden] {
+  display: none !important;
+}
 
 .feedback-modal {
   position: relative;
   width: 100%;
-  max-width: 360px;
+  max-width: 320px;
   padding: 64px 16px 58px;
   background-color: #000000;
   border-radius: 16px;
@@ -89,70 +23,34 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* TABLET */
-@media (min-width: 768px) {
-  .feedback-modal {
-    max-width: 704px;
-    padding: 64px 32px 82px;
-  }
+.feedback-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
 }
-
-@media (min-width: 1440px) {
-  .feedback-modal {
-    max-width: 864px;
-    padding: 64px;
-  }
-}
-
-/* ===========================
-   TITLE
-=========================== */
 
 .feedback-title {
   font-size: 24px;
   text-align: center;
-}
-
-/* TABLET */
-@media (min-width: 768px) {
-  .feedback-title {
-    font-size: 44px;
-    letter-spacing: -0.01em;
-  }
-}
-
-@media (min-width: 1440px) {
-  .feedback-title {
-    font-size: 60px;
-  }
-}
-
-/* ===========================
-   CLOSE BUTTON
-=========================== */
-
-.feedback-close-btn {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  border: none;
-  color: #fff;
-  background: transparent;
+  margin-bottom: 32px;
   font-weight: 700;
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 1;
-  transition: color 150ms ease-in-out;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #fff;
+  background: none;
 }
-
-/* ===========================
-   FORM
-=========================== */
 
 .feedback-form {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .feedback-label {
@@ -164,44 +62,37 @@
 .feedback-label-text {
   font-size: 18px;
   font-weight: 400;
-  color: #ffffff;
+  line-height: 1.5;
 }
-
-/* ===========================
-   INPUTS
-=========================== */
 
 .feedback-input,
 .feedback-textarea {
-  min-width: 288px;
-  min-height: 43px;
-  padding: 8px 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  border: 1px solid #ffffff33;
-  background-color: transparent;
-  font: 400 18px / 150% var(--font-family);
-  color: var(--opacity-white-60);
-  font-size: 18px;
-  outline: none;
-  transition:
-    border-color 150ms ease-in-out,
-    box-shadow 150ms ease-in-out;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  max-width: 288px;
 }
 
 .feedback-input::placeholder,
 .feedback-textarea::placeholder {
-  color: #4b5563;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+}
+.feedback-input::placeholder :active,
+.feedback-textarea::placeholder :active {
+  color: #ffff;
 }
 
 .feedback-input:focus,
 .feedback-textarea:focus {
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4);
+  outline: none;
+  border-color: #764191;
 }
-
-/* ===========================
-   ERRORS
-=========================== */
 
 .feedback-error {
   border-color: #dc2626 !important;
@@ -210,106 +101,90 @@
 .feedback-error-text {
   color: #dc2626;
   font-size: 14px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
-
-/* ===========================
-   SUBMIT BUTTON
-=========================== */
-
-.feedback-submit-btn {
-  width: 288px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: none;
-  box-shadow:
-    0 1px 2px 0 var(--opacity-neutral-darkest-5),
-    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
-    inset 0 0 0 1px var(--opacity-neutral-darkest-15),
-    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 32px 24px 0 var(--opacity-white-5);
-  background: var(--color-affair);
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition:
-    transform 150ms ease-in-out,
-    box-shadow 150ms ease-in-out,
-    opacity 150ms ease-in-out;
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.feedback-submit-btn:hover,
-.feedback-submit-btn:focus-visible {
-  transform: translateY(-1px);
-  opacity: 0.6;
-}
-
-@media (min-width: 768px) {
-  .feedback-submit-btn {
-    width: 340px;
-  }
-}
-@media (min-width: 1440px) {
-  .feedback-submit-btn {
-    width: 108px;
-  }
-}
-
-/* ===========================
-   RATING
-=========================== */
 
 .rating {
   display: flex;
   gap: 8px;
-}
-
-.rating-star {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+  justify-content: start;
 }
 
 .rating-icon {
   width: 32px;
   height: 32px;
-  color: #ffffff;
-  transition:
-    color 0.2s ease,
-    transform 0.15s ease;
+  fill: #fff;
+  transition: color 0.2s;
 }
 
 .rating-star.active .rating-icon {
-  color: #764191;
+  fill: #764191;
 }
 
-.rating-star:hover .rating-icon {
-  transform: scale(1.1);
+.feedback-submit-btn {
+  width: 288px;
+  box-shadow:
+    0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #764191;
+  margin: 0 auto;
+  padding: 10px 24px;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  height: 47px;
+  margin-top: 24px;
 }
 
-/* ===========================
-   MISC
-=========================== */
+.feedback-submit-btn:hover {
+  opacity: 0.9;
+}
 
 .body-no-scroll {
   overflow: hidden;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@media (min-width: 768px) {
+  .feedback-modal {
+    max-width: 704px;
+    padding: 64px 32px 82px;
+  }
+  .feedback-title {
+    font-size: 44px;
+    line-height: 1.2;
+  }
+  .feedback-input,
+  .feedback-textarea {
+    max-width: 640px;
+  }
+  .feedback-submit-btn {
+    width: 340px;
   }
 }
 
-.backdrop[hidden] {
-  display: none !important;
+@media (min-width: 1440px) {
+  .feedback-modal {
+    max-width: 864px;
+    padding: 64px 64px;
+  }
+  .feedback-title {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 48px;
+  }
+  .feedback-input,
+  .feedback-textarea {
+    max-width: 736px;
+  }
+  .feedback-submit-btn {
+    width: 108px;
+  }
 }

@@ -1,35 +1,31 @@
-<header class="header">
-  <div class="container header__container">
-    <!-- Logo -->
-    <a href="#home" class="header__logo">
-      <img
-        src="./img/logo-header.webp"
-        alt="ArtistsHub logo"
-        class="header__logo-img"
-      />
-    </a>
+<header class="header" id="header">
+  <div class="container">
+    <nav class="header-nav" aria-label="main menu">
+      <a href="./index.html" class="logo-link logo">
+        <img
+          src="./img/logo-header.webp"
+          alt="Artists Hub logo"
+          width="119"
+          height="51"
+          loading="lazy"
+        />
+      </a>
 
-    <!-- Navigation -->
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li><a href="#artists" class="header__nav-link">Artists</a></li>
-        <li><a href="#about-us" class="header__nav-link">About Us</a></li>
-        <li><a href="#reviews" class="header__nav-link">Reviews</a></li>
+      <ul class="header-menu">
+        <li><a href=".#artists" class="header-link">Artists</a></li>
+        <li><a href="#about" class="header-link">About Us</a></li>
+        <li><a href="#feedback" class="header-link">Reviews</a></li>
       </ul>
-    </nav>
 
-    <!-- Burger -->
-    <button
-      type="button"
-      class="header__burger"
-      aria-label="Open menu"
-      data-menu-open
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+      <button
+        type="button"
+        class="mob-menu-btn"
+        aria-label="Открыть мобильное меню"
+      >
+        <svg class="menu-icon" width="32" height="22">
+          <use href="./img/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+    </nav>
   </div>
 </header>
-
-
