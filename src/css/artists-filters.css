@@ -129,7 +129,7 @@ position: relative;
 
 .afilters__menu--scroll {
   max-height: 220px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .afilters__item {
