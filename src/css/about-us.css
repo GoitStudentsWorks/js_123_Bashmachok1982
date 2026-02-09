@@ -54,7 +54,6 @@
   line-height: 1.5;
 }
 
-/* планшет и выше */
 @media (min-width: 768px) {
   .about-us {
     padding: 64px 0;
@@ -97,7 +96,6 @@
   }
 }
 
-/* десктоп */
 @media (min-width: 1440px) {
   .about-us {
     padding: 112px 0;
