@@ -153,6 +153,10 @@
   overflow: hidden;
 }
 
+.js-submit-loader[hidden] {
+  display: none !important;
+}
+
 @media (min-width: 768px) {
   .feedback-modal {
     max-width: 704px;

@@ -51,6 +51,15 @@ function openModal() {
   backdrop.removeAttribute('hidden');
   lockScroll();
   clearAllErrors();
+
+  // Ховаємо лоадер при відкритті модалки
+  const submitLoader = document.querySelector('.js-submit-loader');
+  const submitText = document.querySelector('.js-submit-text');
+  const submitBtn = document.querySelector('.feedback-submit-btn');
+
+  if (submitLoader) submitLoader.hidden = true;
+  if (submitText) submitText.hidden = false;
+  if (submitBtn) submitBtn.disabled = false;
 }
 
 function closeModal() {
