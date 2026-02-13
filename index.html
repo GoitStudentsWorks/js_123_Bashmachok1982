@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/js_123_Bashmachok1982/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Epilogue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="
+        ./img/hero/mobile/hero-mobile-1x.webp 280w,
+        ./img/hero/mobile/hero-mobile-2x.webp 560w
+      "
+      imagesizes="280px"
+      media="(max-width: 767px)"
+      fetchpriority="high"
+    />
+
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="
+        ./img/hero/tablet/hero-tablet-1x.webp 704w,
+        ./img/hero/tablet/hero-tablet-2x.webp 1408w
+      "
+      imagesizes="704px"
+      media="(min-width: 768px) and (max-width: 1439px)"
+      fetchpriority="high"
+    />
+
+    <link
+      rel="preload"
+      as="image"
+      imagesrcset="
+        ./img/hero/desktop/hero-desktop-1x.webp 640w,
+        ./img/hero/desktop/hero-desktop-2x.webp 1280w
+      "
+      imagesizes="640px"
+      media="(min-width: 1440px)"
+      fetchpriority="high"
+    />
+
+
+    <title>Artisthub</title>
+    <script type="module" crossorigin src="/js_123_Bashmachok1982/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_123_Bashmachok1982/assets/vendor-Bvfj5gf5.js">
+    <link rel="stylesheet" crossorigin href="/js_123_Bashmachok1982/assets/vendor-DFIboP7m.css">
+    <link rel="stylesheet" crossorigin href="/js_123_Bashmachok1982/assets/index-BHzNkGbl.css">
+  </head>
+
+  <body>
+    <header class="header" id="header">
+  <div class="container">
+    <nav class="header-nav" aria-label="main menu">
+      <a href="./index.html" class="logo-link logo">
+        <img
+          src="./img/logo-header.webp"
+          alt="Artists Hub logo"
+          width="119"
+          height="51"
+          loading="lazy"
+        />
+      </a>
+
+      <ul class="header-menu">
+        <li><a href="#artists" class="header-link">Artists</a></li>
+        <li><a href="#about" class="header-link">About Us</a></li>
+        <li><a href="#feedback" class="header-link">Reviews</a></li>
+      </ul>
+
+      <button
+        type="button"
+        class="mob-menu-btn"
+        aria-label="Открыть мобильное меню"
+      >
+        <svg class="menu-icon" width="32" height="22">
+          <use href="./img/icons.svg#icon-menu"></use>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+
+    <main>
+      <section class="hero" id="hero">
+  <div class="container hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Discover Your Next Favorite Artist Today</h1>
+      <p class="hero-subtitle">
+        Dive into a world of music discoveries with ArtistsHub – your personal
+        guide to the boundless universe of sound. Explore, filter, and learn
+        about your favorite artists all in one place.
+      </p>
+      <a href="#artists" id="exploreBtn" class="hero-btn">
+        Explore Artists
+        <svg class="hero-btn-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-right-arrow"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="hero-img"></div>
+  </div>
+</section>
+
+      <section id="artists" class="artists">
+  <div class="container">
+    <div class="artists__section">
+      <h2 class="artists__title">Artists</h2>
+      <p class="artists__subtitle">Explore Your New Favorite Artists</p>
+      <ul class="artists__list"></ul>
+      <div class="artists__load-more-wrapper">
+        <div class="artists__loader-wrapper">
+          <span class="loader visually-hidden"></span>
+        </div>
+        <button class="artists__load-more-btn">
+          Load More
+          <svg
+            class="artists__scroll-icon"
+            width="24"
+            height="24"
+            fill="#ffffff"
+          >
+            <use href="img/icons.svg#icon_artists_down"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="about-us" id="about">
+  <div class="container">
+    <div class="about-us-inner">
+      <div class="about-us-image">
+        <picture>
+          <source
+            srcset="./img/about-us/desktop/about-desktop-2x.webp 2x, ./img/about-us/desktop/about-desktop-1x.webp 1x"
+            media="(min-width: 1440px)"
+          />
+
+          <source
+            srcset="./img/about-us/tablet/about-tablet-2x.webp 2x, ./img/about-us/tablet/about-tablet-1x.webp 1x"
+            media="(min-width: 768px)"
+          />
+
+          <source
+            srcset="./img/about-us/mobile/about-mobile-2x.webp 2x, ./img/about-us/mobile/about-mobile-1x.webp 1x"
+            media="(max-width: 767px)"
+          />
+          <img
+            src="./img/about-us/mobile/about-mobile-1x.webp"
+            alt="Команда ArtistsHub"
+            width="640"
+            height="664"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+
+      <div class="about-us-content">
+        <svg class="about-us-logo-icon" width="80" height="80">
+          <use href="./img/icons.svg#icon-logo"></use>
+        </svg>
+
+        <h2 class="about-us-title">About ArtistsHub</h2>
+
+        <p class="about-us-text">
+          At ArtistsHub, our mission is to connect music lovers with the artists
+          they adore. We strive to create a vibrant community where discovering
+          new music is as enjoyable as listening to it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="feedback-section">
+  <h2 class="visually-hidden">Feedbacks our visitors</h2>
+
+  <div class="container" id="feedback">
+    <div class="feedback">
+      <div class="swiper feedback-slider">
+        <div class="swiper-wrapper" id="feedback-container"></div>
+
+        <button
+          class="swiper-button-prev custom-arrow"
+          aria-label="Попередній відгук"
+        >
+          <svg class="feedback-icon">
+            <use href="img/icons.svg#icon-arrow-left"></use>
+          </svg>
+        </button>
+        <button
+          class="swiper-button-next custom-arrow"
+          aria-label="Наступний відгук"
+        >
+          <svg class="feedback-icon">
+            <use href="img/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+        <div class="swiper-pagination"></div>
+      </div>
+      <button type="submit" class="feedback-btn" aria-label="Залишити відгук">
+        Leave feedback
+      </button>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <a href="./index.html" class="footer-logo-link">
+        <img
+          src="./img/logo-footer.webp"
+          alt="logo-footer"
+          width="116"
+          height="45"
+        />
+      </a>
+
+      <nav class="footer-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#artists" class="footer-nav-link">Artists</a></li>
+          <li><a href="#about" class="footer-nav-link">About Us</a></li>
+          <li><a href="#feedback" class="footer-nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &#xa9; 2025 ArtistsHub. All rights reserved.
+      </p>
+
+      <ul class="footer-social-list">
+        <li class="footer-social-item footer-social-item--instagram">
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-link"
+          >
+            <svg
+              class="footer-social-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="./img/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="footer-social-item footer-social-item--facebook">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-link"
+          >
+            <svg
+              class="footer-social-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="./img/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+
+        <li class="footer-social-item footer-social-item--youtube">
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="footer-social-link"
+          >
+            <svg
+              class="footer-social-icon"
+              width="24"
+              height="24"
+              aria-hidden="true"
+            >
+              <use href="./img/icons.svg#icon-youtube-footer"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-container">
+    <div class="mobile-menu-header">
+      <a href="/index.html" class="mobile-logo-link">
+        <img
+          src="./img/logo-header.webp"
+          alt="Artists Hub logo"
+          width="140"
+          height="60"
+          loading="lazy"
+        />
+      </a>
+      <button class="menu-close-btn" type="button" aria-label="Close menu">
+        <svg class="menu-close-icon" width="24" height="24">
+          <use href="./img/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="#artists" class="mobile-link">Artists</a></li>
+        <li><a href="#about" class="mobile-link">About Us</a></li>
+        <li><a href="#feedback" class="mobile-link">Reviews</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+    <div id="globalLoader" class="global-loader global-loader--hidden">
+  <div id="artistDataLoader" class="artist-loader artist-loader--hidden">
+    <div class="artist-loader__spinner"></div>
+  </div>
+</div>
+<div
+  class="modal modal--hidden open-artist-modal"
+  id="artistModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="artistModalTitle"
+>
+  <div class="modal__content container" role="document">
+    <button
+      type="button"
+      class="modal__close-btn"
+      aria-label="Close the window"
+      title="Close the window"
+    ></button>
+
+    <section class="modal__artist">
+      <h2 id="artistModalTitle" class="modal__artist-name"></h2>
+      <div class="modal__artist-container">
+        <div class="modal__artist-header">
+          <img
+            src="https://placehold.co/200x200?text=Loading"
+            alt="Artist photo"
+            class="modal__artist-thumb"
+          />
+        </div>
+        <ul class="modal__artist-info">
+          <li class="modal__info-item modal__info-years">
+            <p class="modal__info-label">Years active:</p>
+            <p class="modal__info-value modal__artist-years"></p>
+          </li>
+          <li class="modal__info-item modal__info-gender">
+            <p class="modal__info-label">Sex:</p>
+            <span class="modal__info-value modal__artist-gender"></span>
+          </li>
+          <li class="modal__info-item modal__info-members">
+            <p class="modal__info-label">Members:</p>
+            <span class="modal__info-value modal__artist-members"></span>
+          </li>
+          <li class="modal__info-item modal__info-country">
+            <p class="modal__info-label">Country:</p>
+            <span class="modal__info-value modal__artist-country"></span>
+          </li>
+          <li class="modal__info-item modal__info-bio">
+            <p class="modal__info-title">Biography:</p>
+            <p class="modal__info-description modal__artist-bio"></p>
+          </li>
+          <li class="modal__info-item modal__info-genres">
+            <p class="modal__info-genres-title visually-hidden"></p>
+            <div class="modal__genres-list modal__artist-genres"></div>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="modal__albums-title">Albums</h2>
+      <div class="modal__albums-container"></div>
+    </section>
+  </div>
+</div>
+
+    <div class="backdrop js-feedback-backdrop" hidden>
+  <div
+    class="feedback-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="feedback-title"
+  >
+    <button
+      class="feedback-close-btn js-feedback-close"
+      type="button"
+      aria-label="Close feedback form"
+    >
+      ✕
+    </button>
+
+    <h2 class="feedback-title" id="feedback-title">Submit feedback</h2>
+
+    <form class="feedback-form js-feedback-form" novalidate>
+      <label class="feedback-label">
+        <span class="feedback-label-text">Name</span>
+        <input
+          class="feedback-input"
+          type="text"
+          name="name"
+          placeholder="Emily"
+          required
+        />
+      </label>
+
+      <label class="feedback-label">
+        <span class="feedback-label-text">Message</span>
+        <textarea
+          class="feedback-textarea"
+          name="message"
+          placeholder="Type your message..."
+          rows="5"
+          required
+        ></textarea>
+      </label>
+
+      <div class="rating">
+        <a
+          class="rating-star"
+          data-value="1"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 1 star"
+        >
+          <svg class="rating-icon">
+            <use href="./img/icons.svg#icon-star"></use>
+          </svg>
+        </a>
+
+        <a
+          class="rating-star"
+          data-value="2"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 2 star"
+        >
+          <svg class="rating-icon">
+            <use href="./img/icons.svg#icon-star"></use>
+          </svg>
+        </a>
+        <a
+          class="rating-star"
+          data-value="3"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 3 star"
+        >
+          <svg class="rating-icon">
+            <use href="./img/icons.svg#icon-star"></use>
+          </svg>
+        </a>
+        <a
+          class="rating-star"
+          data-value="4"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 4 star"
+        >
+          <svg class="rating-icon">
+            <use href="./img/icons.svg#icon-star"></use>
+          </svg>
+        </a>
+        <a
+          class="rating-star"
+          data-value="5"
+          href="#"
+          role="button"
+          tabindex="0"
+          aria-label="Rate 5 star"
+        >
+          <svg class="rating-icon">
+            <use href="./img/icons.svg#icon-star"></use>
+          </svg>
+        </a>
+      </div>
+
+      <button class="feedback-submit-btn js-feedback-submit" type="submit">
+        <span class="js-submit-text">Submit</span>
+        <span class="loader js-submit-loader" hidden></span>
+      </button>
+
+      <input type="hidden" name="rating" id="rating-input" value="0" />
+    </form>
+  </div>
+
+  <svg style="display: none">
+    <symbol id="icon-star" viewBox="0 0 34 32">
+      <path
+        d="M15.277 1.031c0.579-1.375 2.551-1.375 3.13 0l3.417 8.116c0.244 0.58 0.796 0.976 1.43 1.026l8.869 0.702c1.503 0.119 2.112 1.972 0.967 2.941l-6.757 5.718c-0.483 0.408-0.694 1.049-0.546 1.66l2.064 8.55c0.35 1.449-1.245 2.594-2.532 1.817l-7.593-4.582c-0.542-0.327-1.224-0.327-1.767 0l-7.593 4.582c-1.287 0.776-2.882-0.369-2.532-1.817l2.064-8.55c0.147-0.611-0.063-1.252-0.546-1.66l-6.757-5.718c-1.145-0.969-0.536-2.822 0.967-2.941l8.869-0.702c0.633-0.050 1.185-0.446 1.429-1.026l3.417-8.116z"
+        fill="currentColor"
+      />
+    </symbol>
+  </svg>
+</div>
+
+    <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Scroll to top">
+  <svg class="scroll-to-top-icon" width="24" height="24">
+    <use href="./img/icons.svg#icon-chevron-down"></use>
+  </svg>
+</button>
+
+
+  </body>
+</html>
